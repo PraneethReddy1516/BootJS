@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSTask8</title>
+</head>
+<body style="background-image: linear-gradient(to left, rgba(255,0,0,0), rgba(255,0,0,1));">
+    <center>
+        <form onsubmit="return validate()">
+           <h2 style="color: blue;">Registration Form</h2>
+            <table>
+                <!-- First Name -->
+                <tr>
+                    <td>First Name</td>
+                    <td>
+                        <input type="text" style="width: 100%;" id="fn">
+                    </td>
+                    <td><span class="form-control" id="messageError" style="color: red; margin: 8px;"></span></td>
+                </tr>
+
+                <!-- Last Name -->
+                <tr>
+                    <td>Last Name</td>
+                    <td>
+                        <input type="text" style="width: 100%;" id="ln">
+                    </td>
+                    <td><span class="form-control" id="messageError1" style="color: red; margin: 8px;"></span></td>
+                </tr>
+
+                <!-- Email -->
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        <input type="text" style="width: 100%;" id="Em">
+                    </td>
+                    <td><span class="form-control" id="messageError2" style="color: red; margin: 8px;"></span></td>
+                </tr>
+
+                <!-- Password -->
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <input type="password" style="width: 100%;" id="pass">
+                    </td>
+                    <td><span class="form-control" id="messageError3" style="color: red; margin: 8px;"></span></td>
+                </tr>
+
+                <!-- Re-enter password -->
+                <tr>
+                    <td>Re-enter password</td>
+                    <td>
+                        <input type="password" style="width: 100%;" id="repass">
+                    </td>
+                    <td><span class="form-control" id="messageError4" style="color: red; margin: 8px;"></span></td>
+                </tr>
+
+                <!-- Gender -->
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <input type="radio" checked="true">Male
+                        <br>
+                        <input type="radio">Female
+                    </td>
+                </tr>
+
+                <!-- Age -->
+                <tr>
+                    <td>Age</td>
+                    <td>
+                        <input type="text" style="width: 100%;" id="age">
+                    </td>
+                    <td><span class="form-control" id="messageError5" style="color: red; margin: 8px;"></span></td>
+                </tr>
+
+                <!-- Phone Number -->
+                <tr>
+                    <td>Phone Number</td>
+                    <td>
+                        <input type="text" style="width: 100%;" id="phn">
+                    </td>
+                    <td><span class="form-control" id="messageError6" style="color: red; margin: 8px;"></span></td>
+                </tr>
+
+                <!-- Address -->
+                <tr>
+                    <td>Address</td>
+                    <td>
+                        <textarea name="comments" rows="5" cols="43" id="add"></textarea>
+                    </td>
+                    <td><span class="form-control" id="messageError7" style="color: red; margin: 8px;"></span></td>
+                </tr>
+
+                <!-- State -->
+                <tr>
+                    <td>State</td>
+                    <td>
+                        <input type="text" style="width: 100%;" id="state">
+                    </td>
+                    <td><span class="form-control" id="messageError8" style="color: red; margin: 8px;"></span></td>
+                </tr>
+
+                <!-- Country -->
+                <tr>
+                    <td>Country</td>
+                    <td>
+                        <select>
+                            <option>Choose your Country</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <!-- Languages known -->
+                <tr>
+                    <td><b>Languages known</b></td>
+                    <td>
+                        <input type="checkbox"/>English
+                        <input type="checkbox"/>Kannada
+                        <input type="checkbox"/>Hindi
+                        <input type="checkbox"/>Telugu
+                    </td>
+                </tr>
+
+                <!-- Declaration -->
+                <tr>
+                    <td colspan="2"><input type="checkbox" checked />Hereby I declare all the given details are true</td>
+                </tr>
+
+                <!-- Login link -->
+                <tr>
+                    <td colspan="2">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login in to <a href="https://www.ethnus.com">Ethunus</a>Website
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="REGISTER" style="background-color: red; color: white; border-radius: 12px; width: 8%;"/>
+        </form>
+    </center>
+
+    <script>
+        function validate() {
+            var FirstName = document.getElementById("fn").value;
+            var LastName = document.getElementById("ln").value;
+            var Email = document.getElementById("Em").value;
+            var password = document.getElementById("pass").value;
+            var repassword = document.getElementById("repass").value;
+            var age = document.getElementById("age").value;
+            var phone = document.getElementById("phn").value;
+            var address = document.getElementById("add").value;
+            var state = document.getElementById("state").value;
+
+            var FirstNameError = document.getElementById("messageError");
+            var LastNameError = document.getElementById("messageError1");
+            var EmailError = document.getElementById("messageError2");
+            var passwordError = document.getElementById("messageError3");
+            var repasswordError = document.getElementById("messageError4");
+            var ageError = document.getElementById("messageError5");
+            var phoneError = document.getElementById("messageError6");
+            var addressError = document.getElementById("messageError7");
+            var stateError = document.getElementById("messageError8");
+
+
+            var isValid = true; 
+
+            if (FirstName.trim() === "") {
+                FirstNameError.textContent = " POOR";
+                isValid = false; 
+            }
+
+            if (LastName.trim() === "") {
+                LastNameError.textContent = "POOR";
+                isValid = false; 
+            }
+
+            if (Email.trim() === "") {
+                EmailError.textContent = "POOR";
+                isValid = false; 
+            }
+
+            if (password.trim() === "") {
+                passwordError.textContent = "POOR";
+                isValid = false; 
+            }
+
+            if (repassword.trim() === "") {
+                repasswordError.textContent = "POOR OR MISMATCH";
+                isValid = false; 
+            }
+
+            if (age.trim() === "") {
+                ageError.textContent = "POOR";
+                isValid = false; 
+            }
+
+            if (phone.trim() === "") {
+                phoneError.textContent = "POOR";
+                isValid = false; 
+            }
+
+            if (address.trim() === "") {
+                addressError.textContent = "POOR";
+                isValid = false; 
+            }
+
+            if (state.trim() === "") {
+                stateError.textContent = "POOR";
+                isValid = false; 
+            }
+
+            return isValid; 
+        }
+    </script>
+</body>
+</html>

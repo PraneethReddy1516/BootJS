@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSTask1</title>
+</head>
+<body>
+    <p id="output"></p> 
+    
+    <script>
+        function reverse_a_number(n) {
+            n = n + "";
+            return n.split("").reverse().join("");
+        }
+        
+        var inputNumber = 32243;
+        var reversedNumber = Number(reverse_a_number(inputNumber));
+
+        var outputElement = document.getElementById("output");
+        outputElement.textContent = "Example x: " + inputNumber + ", Expected output: " + reversedNumber;
+
+        console.log("Expected output: " + reversedNumber);
+    </script>
+</body>
+</html>

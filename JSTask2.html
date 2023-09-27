@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSTask2</title>
+</head>
+<body>
+    <p id="output"></p>
+
+    <script>
+        function alphabet_order(str) {
+            return str.split('').sort().join('');
+        }
+
+        const inputString = "webmaster";
+        const sortedString = alphabet_order(inputString);
+
+        // Display the result in the element with the ID "output"
+        const outputElement = document.getElementById("output");
+        outputElement.innerHTML = "inputString:" + inputString + " ,Sorted String: " + sortedString;
+
+        // Log the result to the console
+        console.log("Sorted String: " + sortedString);
+    </script>
+</body>
+</html>

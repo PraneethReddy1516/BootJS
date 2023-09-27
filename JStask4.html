@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSTask4</title>
+</head>
+<body>
+    <button class="button" onclick="showDate()">Show Date</button>
+    <div class="display" id="dateDisplay"></div>
+<br>
+    <button class="button" onclick="showTime()">Show Time</button>
+    <div class="display" id="timeDisplay"></div>
+
+    <script>
+        function formatDate(date) {
+            const options = { day: 'numeric', month: 'long', year: 'numeric' };
+            const parts = new Intl.DateTimeFormat('en-US', options).formatToParts(date);
+            const day = parts.find(part => part.type === 'day').value;
+            const month = parts.find(part => part.type === 'month').value;
+            const year = parts.find(part => part.type === 'year').value;
+            return `${day}/${month}/${year}`;
+        }
+
+        function formatTime(date) {
+            return new Date(date).toString();
+        }
+
+        function showDate() {
+            const dateDisplay = document.getElementById('dateDisplay');
+            const currentDate = new Date('2023-09-24');
+            dateDisplay.textContent = formatDate(currentDate);
+        }
+
+        function showTime() {
+            const timeDisplay = document.getElementById('timeDisplay');
+            const currentDate = new Date();
+            timeDisplay.textContent = formatTime(currentDate);
+        }
+    </script>
+</body>
+</html>
+
